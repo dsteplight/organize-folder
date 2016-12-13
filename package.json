@@ -1,0 +1,17 @@
+{
+  "name": "clean-download-with-nodejs",
+  "version": "1.0.0",
+  "description": "Clean Up Downlaods Folder",
+  "main": "clean-download.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Darryle Steplight",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^1.6.1",
+    "file-type": "^3.9.0",
+    "hound": "^1.0.4",
+    "read-chunk": "^2.0.0"
+  }
+}
