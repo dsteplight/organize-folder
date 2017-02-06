@@ -13,8 +13,8 @@ var watcher = chokidar.watch('/Users/dsteplight/Downloads', {
 });
 
 const config = {
-  'JPEG': '/Users/dsteplight/Documents/JPEG', 
-  'PDF': '/Users/dsteplight/Documents/PDF' 
+  'jpeg_folder': '/Users/dsteplight/Documents/JPEG', 
+  'pdf_folder': '/Users/dsteplight/Documents/PDF' 
 };
 
 
