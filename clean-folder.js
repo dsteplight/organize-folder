@@ -1,3 +1,4 @@
+'use strict';
 var chokidar = require('chokidar');
 const readChunk = require('read-chunk'); // npm install read-chunk 
 const fileType = require('file-type');
@@ -8,12 +9,17 @@ var Buffer = require('buffer').Buffer;
 
 var log = console.log.bind(console);
 
+var config = {};
+  config['watched_folder'] = '/Users/dsteplight/Downloads';
+  config['jpeg_folder'] = '/Users/dsteplight/Documents/JPEG';
+  config['pdf_folder'] = '/Users/dsteplight/Documents/PDF';
 
-const config = {
-  'watched_folder': '/Users/dsteplight/Downloads',
-  'jpeg_folder': '/Users/dsteplight/Documents/JPEG', 
-  'pdf_folder': '/Users/dsteplight/Documents/PDF' 
-};
+for (var key in config) 
+{
+   if ((typeof config[key]) != 'undefined' && key != 'watched_folder') { 
+       console.log(config[key]);
+   } 
+}
 
 var watcher = chokidar.watch(config.watched_folder, {
   ignored: /[\/\\]\./, 
@@ -48,7 +54,7 @@ watcher
 
    })
   .on('addDir', function(path) { 
-         console.log(path);
+  //       console.log(path);
   })
   .on('change', function(path) {
 
