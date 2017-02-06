@@ -16,8 +16,13 @@ var config = {};
 
 for (var key in config) 
 {
-   if ((typeof config[key]) != 'undefined' && key != 'watched_folder') { 
-       console.log(config[key]);
+   //make sure there is a path set and skipped over the watch folder
+   if ((typeof config[key]) != 'undefined' && key !== 'watched_folder') { 
+       let path_string = config[key];
+      if (!fs.existsSync(path_string)){
+          fs.mkdirSync(path_string);
+         console.log('A NEW FOLDER HAS BEEN CREATED: '+path_string);
+      }
    } 
 }
 
