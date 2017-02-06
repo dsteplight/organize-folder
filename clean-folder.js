@@ -38,11 +38,11 @@ watcher
          {
             if( allowed_file_types.indexOf(file_type) !== -1)
             {
-/*
+
                mv(path, targeted_file, function(err) {
                    log('This file has been moved to ', targeted_file); 
                });
-*/
+
             }
          }
 
