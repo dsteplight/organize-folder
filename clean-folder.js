@@ -3,6 +3,8 @@ const readChunk = require('read-chunk'); // npm install read-chunk
 const fileType = require('file-type');
 const mv = require('mv');
 const path_object = require('path');
+var fs = require('fs');
+var Buffer = require('buffer').Buffer;
 
 var log = console.log.bind(console);
 
@@ -14,19 +16,23 @@ watcher
   .on('add', function(path) { 
 
       const allowed_file_types = ["jpg", "jpeg" ];
-      const buffer = readChunk.sync(path, 0, 262);
-      var path_type = fileType(buffer);
-      var file_name =  path_object.basename(path);
+      //const buffer = readChunk.sync(path, 0, 262);
+      //var path_type = fileType(buffer);
+      var file_name = path_object.basename(path);
+      const file_type = path_object.extname(path);
       const target_folder = '/Users/dsteplight/Documents/JPEG';
       var targeted_file = target_folder+path_object.sep+file_name;
 
-         if( path_type !== null )
+         if( file_type !== null )
          {
-            if( allowed_file_types.indexOf(path_type.ext) !== -1)
+            if( allowed_file_types.indexOf(file_type) !== -1)
             {
+console.log('debug file_type ', file_type);
+/*
                mv(path, targeted_file, function(err) {
                    log('This file has been moved to ', targeted_file); 
                });
+*/
             }
          }
 
