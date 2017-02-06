@@ -59,7 +59,18 @@ watcher
 
    })
   .on('addDir', function(path) { 
-  //       console.log(path);
+
+   fs.stat(path, function (err, stats){
+     if (err) {
+       //this should always exsits since we are only dealing with directories right now
+     }
+     if (stats.isDirectory()) {
+       // This isn't a directory!
+      const directory_name = path_object.basename(path);
+         console.log("THIS IS A DIRECOTRY THAT WE NEED TO ZIP UP "+ path + " "+file_name);
+     } 
+   });
+
   })
   .on('change', function(path) {
 
