@@ -8,15 +8,19 @@ var Buffer = require('buffer').Buffer;
 
 var log = console.log.bind(console);
 
-var watcher = chokidar.watch('/Users/dsteplight/Downloads', {
-  ignored: /[\/\\]\./, interval: 10000, persistent: true
-});
 
 const config = {
+  'watched_folder': '/Users/dsteplight/Downloads',
   'jpeg_folder': '/Users/dsteplight/Documents/JPEG', 
   'pdf_folder': '/Users/dsteplight/Documents/PDF' 
 };
 
+var watcher = chokidar.watch(config.watched_folder, {
+  ignored: /[\/\\]\./, 
+  interval: 10000, 
+  persistent: true,
+  depth: 0
+});
 
 watcher
   .on('add', function(path) { 
@@ -28,7 +32,7 @@ watcher
       const file_name = path_object.basename(path);
       const file_type = path_object.extname(path);
       
-      const target_folder = '/Users/dsteplight/Documents/JPEG';
+      const target_folder = config.jpeg_folder;
       const targeted_file = target_folder+path_object.sep+file_name;
          if( file_type !== null )
          {
@@ -44,6 +48,7 @@ watcher
 
    })
   .on('addDir', function(path) { 
+         console.log(path);
   })
   .on('change', function(path) {
 
