@@ -77,7 +77,8 @@ watcher
              //this should always exsits since we are only dealing with directories right now
            }
 
-           if (stats.isDirectory()) 
+           //make sure not to also zip up the actual folder that is being watched
+           if (stats.isDirectory() && path !== config.watched_folder ) 
            {
             let child = exec("zip -r "+directory_name+".zip "+path,{maxBuffer: 1024 * 1000}, function (error, stdout, stderr) 
                         {
