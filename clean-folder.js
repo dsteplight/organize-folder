@@ -17,6 +17,12 @@ var config = {};
   config['jpeg_folder'] = '/Users/dsteplight/Documents/JPEG';
   config['pdf_folder'] = '/Users/dsteplight/Documents/PDF';
   config['gif_folder'] = '/Users/dsteplight/Documents/GIF';
+  config['png_folder'] = '/Users/dsteplight/Documents/PNG';
+  config['wmv_folder'] = '/Users/dsteplight/Movies/WMV';
+  config['mp4_folder'] = '/Users/dsteplight/Movies/MP4';
+  config['flv_folder'] = '/Users/dsteplight/Movies/FLV';
+  config['avi_folder'] = '/Users/dsteplight/Movies/AVI';
+  config['screen_saver_folder'] = '/Users/dsteplight/Documents/SCREEN-SAVER';
   config['zip_folder'] = '/Users/dsteplight/ZIP';
 
 for (var key in config) 
@@ -72,8 +78,32 @@ watcher
                      var target_folder = config.gif_folder;
                      moveFile( target_folder, file_name, path );
                   break;
+               case '.png':
+                     var target_folder = config.png_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
                case '.pdf':
                      var target_folder = config.pdf_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.wmv':
+                     var target_folder = config.wmv_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.mp4':
+                     var target_folder = config.mp4_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.flv':
+                     var target_folder = config.flv_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.avi':
+                     var target_folder = config.avi_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.saver':
+                     var target_folder = config.screen_saver_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                default:
