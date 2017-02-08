@@ -37,27 +37,40 @@ var watcher = chokidar.watch(config.watched_folder, {
   depth: 0
 });
 
+function moveFile( folder, file, path_of_current_file )
+{
+         let targeted_file = folder+path_object.sep+file;
+
+         mv(path_of_current_file, targeted_file, function(err) {
+             log('This file has been moved to ', targeted_file); 
+         });
+
+
+return true;
+}
+
 watcher
   .on('add', function(path) { 
 
-      //const buffer = readChunk.sync(path, 0, 262);
-      //var path_type = fileType(buffer);
-
-      const allowed_file_types = [".jpg", ".jpeg"];
       const file_name = path_object.basename(path);
       const file_type = path_object.extname(path);
+
       
-      const target_folder = config.jpeg_folder;
-      const targeted_file = target_folder+path_object.sep+file_name;
          if( file_type !== null )
          {
-            if( allowed_file_types.indexOf(file_type) !== -1)
+            switch(file_type)
             {
-
-               mv(path, targeted_file, function(err) {
-                   log('This file has been moved to ', targeted_file); 
-               });
-
+               case '.jpg':
+               case '.jpeg':
+                     var target_folder = config.jpeg_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.pdf':
+                     var target_folder = config.pdf_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               default:
+                  break;
             }
          }
 
