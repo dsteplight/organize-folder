@@ -16,6 +16,7 @@ var config = {};
   config['watched_folder'] = '/Users/dsteplight/Downloads';
   config['jpeg_folder'] = '/Users/dsteplight/Documents/JPEG';
   config['pdf_folder'] = '/Users/dsteplight/Documents/PDF';
+  config['gif_folder'] = '/Users/dsteplight/Documents/GIF';
   config['zip_folder'] = '/Users/dsteplight/ZIP';
 
 for (var key in config) 
@@ -65,6 +66,10 @@ watcher
                case '.jpg':
                case '.jpeg':
                      var target_folder = config.jpeg_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.gif':
+                     var target_folder = config.gif_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.pdf':
