@@ -37,12 +37,14 @@ var watcher = chokidar.watch(config.watched_folder, {
   depth: 0
 });
 
-function moveFile( folder, file, path_of_current_file )
+function moveFile( folder, file, path_of_current_file)
 {
          let targeted_file = folder+path_object.sep+file;
 
-         mv(path_of_current_file, targeted_file, function(err) {
+         mv(path_of_current_file, targeted_file, function(err) 
+         {
              log('This file has been moved to ', targeted_file); 
+
          });
 
 
@@ -110,14 +112,13 @@ watcher
                                      //now delete the folder from the config.watched_files directory
                                      rmdir(path, function (err, dirs, files) 
                                      {
-                                      //console.log(dirs);
-                                      //console.log(files);
+                                      console.log(dirs);
+                                      console.log(files);
                                       console.log('all files are removed from '+ path);
                                      });
 
                                  });
                               }
-
                         });
 
            } 
