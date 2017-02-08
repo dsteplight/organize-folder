@@ -14,14 +14,19 @@ var log = console.log.bind(console);
 
 var config = {};
   config['watched_folder'] = '/Users/dsteplight/Downloads';
+  
   config['jpeg_folder'] = '/Users/dsteplight/Documents/JPEG';
   config['pdf_folder'] = '/Users/dsteplight/Documents/PDF';
   config['gif_folder'] = '/Users/dsteplight/Documents/GIF';
   config['png_folder'] = '/Users/dsteplight/Documents/PNG';
+  
   config['wmv_folder'] = '/Users/dsteplight/Movies/WMV';
   config['mp4_folder'] = '/Users/dsteplight/Movies/MP4';
   config['flv_folder'] = '/Users/dsteplight/Movies/FLV';
   config['avi_folder'] = '/Users/dsteplight/Movies/AVI';
+  config['webm_folder'] = '/Users/dsteplight/Movies/WEBM';
+  
+  config['mp3_folder'] = '/Users/dsteplight/Music/MP3';
   config['screen_saver_folder'] = '/Users/dsteplight/Documents/SCREEN-SAVER';
   config['zip_folder'] = '/Users/dsteplight/ZIP';
 
@@ -100,6 +105,14 @@ watcher
                   break;
                case '.avi':
                      var target_folder = config.avi_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.mp3':
+                     var target_folder = config.mp3_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.webm':
+                     var target_folder = config.webm_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
