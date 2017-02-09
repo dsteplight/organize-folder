@@ -15,28 +15,41 @@ var log = console.log.bind(console);
 var config = {};
   config['watched_folder'] = '/Users/dsteplight/Downloads';
   
-  config['jpeg_folder'] = '/Users/dsteplight/Documents/JPEG';
+  //documents
   config['pdf_folder'] = '/Users/dsteplight/Documents/PDF';
+  
+  //todo: make these go into the pictures folder
+
+  //picture files
+  config['jpeg_folder'] = '/Users/dsteplight/Documents/JPEG';
   config['gif_folder'] = '/Users/dsteplight/Documents/GIF';
   config['png_folder'] = '/Users/dsteplight/Documents/PNG';
   
+  //video files
   config['wmv_folder'] = '/Users/dsteplight/Movies/WMV';
   config['mp4_folder'] = '/Users/dsteplight/Movies/MP4';
   config['flv_folder'] = '/Users/dsteplight/Movies/FLV';
   config['avi_folder'] = '/Users/dsteplight/Movies/AVI';
   config['webm_folder'] = '/Users/dsteplight/Movies/WEBM';
   
+  //music files
   config['mp3_folder'] = '/Users/dsteplight/Music/MP3';
+  
+  //apps
   config['screen_saver_folder'] = '/Users/dsteplight/Documents/SCREEN-SAVER';
+
+  //compressed files
   config['zip_folder'] = '/Users/dsteplight/ZIP';
 
 for (var key in config) 
 {
    //make sure there is a path set and skipped over the watch folder
-   if ((typeof config[key]) != 'undefined' && key !== 'watched_folder') { 
+   if ((typeof config[key]) != 'undefined' && key !== 'watched_folder') 
+   { 
        let path_string = config[key];
-      if (!fs.existsSync(path_string)){
-          fs.mkdirSync(path_string);
+      if (!fs.existsSync(path_string))
+      {
+         fs.mkdirSync(path_string);
          console.log('A NEW FOLDER HAS BEEN CREATED: '+path_string);
       }
    } 
