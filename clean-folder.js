@@ -225,6 +225,10 @@ watcher
                      var target_folder = config.mov_folder;
                      moveFile( target_folder, file_name, path );
                   break;
+               case '.zip':
+                     var target_folder = config.zip_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
                case '.saver':
                      var target_folder = config.screen_saver_folder;
                      moveFile( target_folder, file_name, path );
