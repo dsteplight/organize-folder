@@ -31,6 +31,10 @@ var config = {};
   config['flv_folder'] = '/Users/dsteplight/Movies/FLV';
   config['avi_folder'] = '/Users/dsteplight/Movies/AVI';
   config['webm_folder'] = '/Users/dsteplight/Movies/WEBM';
+  config['mkv_folder'] = '/Users/dsteplight/Movies/MKV';
+  config['ts_folder'] = '/Users/dsteplight/Movies/TS';
+  config['threepg_folder'] = '/Users/dsteplight/Movies/3PG';
+  config['mpg_folder'] = '/Users/dsteplight/Movies/MPG';
   
   //music files
   config['mp3_folder'] = '/Users/dsteplight/Music/MP3';
@@ -69,9 +73,7 @@ function moveFile( folder, file, path_of_current_file)
          mv(path_of_current_file, targeted_file, function(err) 
          {
              log('This file has been moved to ', targeted_file); 
-
          });
-
 
 return true;
 }
@@ -82,7 +84,6 @@ watcher
       const file_name = path_object.basename(path);
       const file_type = path_object.extname(path);
 
-      
          if( file_type !== null )
          {
             switch(file_type)
@@ -126,6 +127,22 @@ watcher
                   break;
                case '.webm':
                      var target_folder = config.webm_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.mkv':
+                     var target_folder = config.mkv_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.ts':
+                     var target_folder = config.ts_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.3pg':
+                     var target_folder = config.threepg_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.mpg':
+                     var target_folder = config.mpg_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
