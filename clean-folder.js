@@ -22,6 +22,7 @@ var config = {};
   config['json_folder'] = '/Users/dsteplight/Documents/JSON';
   config['md_folder'] = '/Users/dsteplight/Documents/MD';
   config['key_folder'] = '/Users/dsteplight/Documents/KEY';
+  config['js_folder'] = '/Users/dsteplight/Documents/JAVASCRIPT';
   
   //todo: make these go into the pictures folder
 
@@ -257,6 +258,10 @@ watcher
                   break;
                case '.ogg':
                      var target_folder = config.ogg_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.js':
+                     var target_folder = config.js_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
