@@ -59,6 +59,7 @@ var config = {};
   config['tar_folder'] = '/Users/dsteplight/TAR';
   config['phar_folder'] = '/Users/dsteplight/PHAR';
   config['bz2_folder'] = '/Users/dsteplight/BZ2';
+  config['tgz_folder'] = '/Users/dsteplight/TGZ';
 
   //database files (todo: include .sql.gz files in SQL folder)
   config['sql_folder'] = '/Users/dsteplight/SQL';
@@ -227,6 +228,10 @@ watcher
                   break;
                case '.zip':
                      var target_folder = config.zip_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.tgz':
+                     var target_folder = config.tgz_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
