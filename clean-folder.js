@@ -21,6 +21,7 @@ var config = {};
   config['php_folder'] = '/Users/dsteplight/Documents/PHP';
   config['json_folder'] = '/Users/dsteplight/Documents/JSON';
   config['md_folder'] = '/Users/dsteplight/Documents/MD';
+  config['key_folder'] = '/Users/dsteplight/Documents/KEY';
   
   //todo: make these go into the pictures folder
 
@@ -237,6 +238,10 @@ watcher
                   break;
                case '.m4v':
                      var target_folder = config.m4v_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.key':
+                     var target_folder = config.key_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
