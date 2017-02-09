@@ -316,9 +316,9 @@ watcher
                              console.log('all files are removed from '+ path);
                             });
 
-                        });
-                     }
-               });
+                     });
+                  }
+            });
 
            } 
 
