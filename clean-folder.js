@@ -17,6 +17,7 @@ var config = {};
   
   //documents
   config['pdf_folder'] = '/Users/dsteplight/Documents/PDF';
+  config['xlsx_folder'] = '/Users/dsteplight/Documents/EXCEL';
   
   //todo: make these go into the pictures folder
 
@@ -197,6 +198,11 @@ watcher
                   break;
                case '.ical':
                      var target_folder = config.ical_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.xls':
+               case '.xlsx':
+                     var target_folder = config.xlsx_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
