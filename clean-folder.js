@@ -269,6 +269,7 @@ watcher
                      moveFile( target_folder, file_name, path );
                   break;
                default:
+                     //useful for targeting which files types have not be caught
                      //console.log("DEBUG: "+file_type.toLowerCase());
                   break;
             }
