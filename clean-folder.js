@@ -42,6 +42,7 @@ var config = {};
   
   //apps
   config['screen_saver_folder'] = '/Users/dsteplight/Documents/SCREEN-SAVER';
+  config['dmg_folder'] = '/Users/dsteplight/Documents/DMG';
 
   //compressed files
   config['zip_folder'] = '/Users/dsteplight/ZIP';
@@ -180,6 +181,10 @@ watcher
                   break;
                case '.sqlite':
                      var target_folder = config.sqlite_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.dmg':
+                     var target_folder = config.dmg_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
