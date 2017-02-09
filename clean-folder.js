@@ -45,6 +45,10 @@ var config = {};
 
   //compressed files
   config['zip_folder'] = '/Users/dsteplight/ZIP';
+  config['gz_folder'] = '/Users/dsteplight/GZ';
+  config['tar_folder'] = '/Users/dsteplight/TAR';
+  config['phar_folder'] = '/Users/dsteplight/PHAR';
+  config['bz2_folder'] = '/Users/dsteplight/BZ2';
 
 for (var key in config) 
 {
@@ -148,6 +152,22 @@ watcher
                   break;
                case '.aac':
                      var target_folder = config.aac_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.gz':
+                     var target_folder = config.gz_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.tar':
+                     var target_folder = config.tar_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.phar':
+                     var target_folder = config.phar_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.bz2':
+                     var target_folder = config.bz2_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
