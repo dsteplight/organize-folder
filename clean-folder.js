@@ -38,6 +38,7 @@ var config = {};
   
   //music files
   config['mp3_folder'] = '/Users/dsteplight/Music/MP3';
+  config['aac_folder'] = '/Users/dsteplight/Music/AAC';
   
   //apps
   config['screen_saver_folder'] = '/Users/dsteplight/Documents/SCREEN-SAVER';
@@ -143,6 +144,10 @@ watcher
                   break;
                case '.mpg':
                      var target_folder = config.mpg_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.aac':
+                     var target_folder = config.aac_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
