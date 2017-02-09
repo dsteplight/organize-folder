@@ -45,6 +45,8 @@ var config = {};
   config['dmg_folder'] = '/Users/dsteplight/DMG';
 
    //calendars
+  config['ics_folder'] = '/Users/dsteplight/ICS';
+  config['ical_folder'] = '/Users/dsteplight/ICAL';
 
   //compressed files
   config['zip_folder'] = '/Users/dsteplight/ZIP';
@@ -187,6 +189,14 @@ watcher
                   break;
                case '.dmg':
                      var target_folder = config.dmg_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.ics':
+                     var target_folder = config.ics_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.ical':
+                     var target_folder = config.ical_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
