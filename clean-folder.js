@@ -18,6 +18,8 @@ var config = {};
   //documents
   config['pdf_folder'] = '/Users/dsteplight/Documents/PDF';
   config['xlsx_folder'] = '/Users/dsteplight/Documents/EXCEL';
+  config['php_folder'] = '/Users/dsteplight/Documents/PHP';
+  config['json_folder'] = '/Users/dsteplight/Documents/JSON';
   
   //todo: make these go into the pictures folder
 
@@ -203,6 +205,14 @@ watcher
                case '.xls':
                case '.xlsx':
                      var target_folder = config.xlsx_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.php':
+                     var target_folder = config.php_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.json':
+                     var target_folder = config.json_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
