@@ -50,6 +50,10 @@ var config = {};
   config['phar_folder'] = '/Users/dsteplight/PHAR';
   config['bz2_folder'] = '/Users/dsteplight/BZ2';
 
+  //database files (todo: include .sql.gz files in SQL folder)
+  config['sql_folder'] = '/Users/dsteplight/SQL';
+  config['sqlite_folder'] = '/Users/dsteplight/SQLITE';
+
 for (var key in config) 
 {
    //make sure there is a path set and skipped over the watch folder
@@ -168,6 +172,14 @@ watcher
                   break;
                case '.bz2':
                      var target_folder = config.bz2_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.sql':
+                     var target_folder = config.sql_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.sqlite':
+                     var target_folder = config.sqlite_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
