@@ -42,7 +42,9 @@ var config = {};
   
   //apps
   config['screen_saver_folder'] = '/Users/dsteplight/Documents/SCREEN-SAVER';
-  config['dmg_folder'] = '/Users/dsteplight/Documents/DMG';
+  config['dmg_folder'] = '/Users/dsteplight/DMG';
+
+   //calendars
 
   //compressed files
   config['zip_folder'] = '/Users/dsteplight/ZIP';
