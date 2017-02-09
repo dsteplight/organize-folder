@@ -40,6 +40,7 @@ var config = {};
   config['threegp_folder'] = '/Users/dsteplight/Movies/3PG';
   config['mpg_folder'] = '/Users/dsteplight/Movies/MPG';
   config['mov_folder'] = '/Users/dsteplight/Movies/MOV';
+  config['m4v_folder'] = '/Users/dsteplight/Movies/M4V';
   
   //music files
   config['mp3_folder'] = '/Users/dsteplight/Music/MP3';
@@ -232,6 +233,10 @@ watcher
                   break;
                case '.tgz':
                      var target_folder = config.tgz_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.m4v':
+                     var target_folder = config.m4v_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
