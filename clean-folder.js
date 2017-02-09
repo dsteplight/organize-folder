@@ -48,6 +48,7 @@ var config = {};
   config['aac_folder'] = '/Users/dsteplight/Music/AAC';
   config['m3u8_folder'] = '/Users/dsteplight/Music/M3U8';
   config['wav_folder'] = '/Users/dsteplight/Music/WAV';
+  config['ogg_folder'] = '/Users/dsteplight/Music/OGG';
   
   //apps
   config['screen_saver_folder'] = '/Users/dsteplight/Documents/SCREEN-SAVER';
@@ -110,7 +111,7 @@ watcher
 
          if( file_type !== null )
          {
-            switch(file_type)
+            switch(file_type.toLowerCase())
             {
                case '.jpg':
                case '.jpeg':
@@ -254,11 +255,16 @@ watcher
                      var target_folder = config.wav_folder;
                      moveFile( target_folder, file_name, path );
                   break;
+               case '.ogg':
+                     var target_folder = config.ogg_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
                case '.saver':
                      var target_folder = config.screen_saver_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                default:
+                     //console.log("DEBUG: "+file_type.toLowerCase());
                   break;
             }
          }
