@@ -43,9 +43,11 @@ var config = {};
   config['mov_folder'] = '/Users/dsteplight/Movies/MOV';
   config['m4v_folder'] = '/Users/dsteplight/Movies/M4V';
   
-  //music files
+  //audio files
   config['mp3_folder'] = '/Users/dsteplight/Music/MP3';
   config['aac_folder'] = '/Users/dsteplight/Music/AAC';
+  config['m3u8_folder'] = '/Users/dsteplight/Music/M3U8';
+  config['wav_folder'] = '/Users/dsteplight/Music/WAV';
   
   //apps
   config['screen_saver_folder'] = '/Users/dsteplight/Documents/SCREEN-SAVER';
@@ -242,6 +244,14 @@ watcher
                   break;
                case '.key':
                      var target_folder = config.key_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.m3u8':
+                     var target_folder = config.m3u8_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.wav':
+                     var target_folder = config.wav_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
