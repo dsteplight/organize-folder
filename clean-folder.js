@@ -20,6 +20,7 @@ var config = {};
   config['xlsx_folder'] = '/Users/dsteplight/Documents/EXCEL';
   config['php_folder'] = '/Users/dsteplight/Documents/PHP';
   config['json_folder'] = '/Users/dsteplight/Documents/JSON';
+  config['md_folder'] = '/Users/dsteplight/Documents/MD';
   
   //todo: make these go into the pictures folder
 
@@ -36,7 +37,7 @@ var config = {};
   config['webm_folder'] = '/Users/dsteplight/Movies/WEBM';
   config['mkv_folder'] = '/Users/dsteplight/Movies/MKV';
   config['ts_folder'] = '/Users/dsteplight/Movies/TS';
-  config['threepg_folder'] = '/Users/dsteplight/Movies/3PG';
+  config['threegp_folder'] = '/Users/dsteplight/Movies/3PG';
   config['mpg_folder'] = '/Users/dsteplight/Movies/MPG';
   
   //music files
@@ -154,8 +155,8 @@ watcher
                      var target_folder = config.ts_folder;
                      moveFile( target_folder, file_name, path );
                   break;
-               case '.3pg':
-                     var target_folder = config.threepg_folder;
+               case '.3gp':
+                     var target_folder = config.threegp_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.mpg':
@@ -213,6 +214,10 @@ watcher
                   break;
                case '.json':
                      var target_folder = config.json_folder;
+                     moveFile( target_folder, file_name, path );
+                  break;
+               case '.md':
+                     var target_folder = config.md_folder;
                      moveFile( target_folder, file_name, path );
                   break;
                case '.saver':
