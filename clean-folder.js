@@ -7,6 +7,11 @@ const path_object = require('path');
 const exec = require('child_process').exec;
 const rmdir = require('rmdir');
 
+const readConfig = require('read-config');
+const configPaths = readConfig('./config-paths.json');
+
+console.log(configPaths);
+
 var fs = require('fs');
 var Buffer = require('buffer').Buffer;
 
@@ -84,7 +89,21 @@ for (var key in config)
       }
    } 
 }
-
+/* note: use convert config object to configPath 
+for (var key in configPaths) 
+{
+   //make sure there is a path set and skipped over the watch folder
+   if ((typeof configPaths[key]) != 'undefined' && key !== 'watched_folder') 
+   { 
+       let path_string = configPaths[key];
+      if (!fs.existsSync(path_string))
+      {
+         fs.mkdirSync(path_string);
+         console.log('A NEW FOLDER HAS BEEN CREATED: '+path_string);
+      }
+   } 
+}
+*/
 var watcher = chokidar.watch(config.watched_folder, {
   ignored: /[\/\\]\./, 
   interval: 10000, 
